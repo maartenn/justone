@@ -3,42 +3,32 @@ let alleWoorden = [
     "Kangoeroe", "Lamp", "Muziek", "Noot", "Oceaan", "Piano", "Quiche", "Robot", "Ster", "Trein",
     "Uil", "Vliegtuig", "Wolf", "Xylofoon", "Yoghurt", "Zebra", "Aap", "Bal", "Cactus", "Dobbelsteen",
     "Egel", "Fluit", "Gitaar", "Hoed", "Inkt", "Jas", "Kikker", "Leeuw", "Maan", "Nectar",
-    "Oog", "Papegaai", "Quiz", "Ring", "Schaap", "Tomaat", "Ufo", "Vork", "Wolk", "Xenon",
-    "Yak", "Zon", "Aardbei", "Bos", "Citroen", "Duif", "Eend", "Fietsbel", "Gans", "Harp",
-    "Ijsbeer", "Jam", "Koek", "Lucht", "Mier", "Narwal", "Olijf", "Pinguïn", "Quokka", "Reiger",
-    "Slang", "Tulp", "Umbrella", "Vlinder", "Walvis", "X-ray", "Yucca", "Zaklamp", "Achtbaan", "Banaan",
-    "Chocolade", "Dolfijn", "Eekhoorn", "Fakkel", "Gorilla", "Hamburger", "IJsklontje", "Joker", "Klaver", "Limoen",
-    "Mango", "Nachos", "Octopus", "Pompoen", "Quinoa", "Raket", "Sok", "Tijger", "Uilskuiken", "Vampier",
-    "Walnoot", "Xenofobie", "Yoga", "Zandloper", "Accordeon", "Baksteen", "Cello", "Dobbelsteen", "Emmer", "Föhn",
-    "Golfbal", "Hinkelspel", "Insect", "Jaloezie", "Klompen", "Lantaarn", "Microfoon", "Neushoorn", "Oven", "Puzzel",
-    "Quetzal", "Röntgen", "Satelliet", "Telefoon", "Uitkijktoren", "Viool", "Waterski", "X-chromosoom", "Yoghurtijs", "Zweefvliegtuig",
-    "Achtertuin", "Biljart", "Concert", "Druif", "Elastiek", "Frisbee", "Graffiti", "Hindernis", "IJsje", "Jubileum",
-    "Kwartet", "Laser", "Mozaïek", "Nijptang", "Omelet", "Parachute", "Quickstep", "Rozenstruik", "Scheikunde", "Trampoline",
-    "Uitsmijter", "Vermiljoen", "Windmolen",  "Yoghurtmaker", "Zeilboot", "Aardappel", "Bureaulamp", "Citruspers", "Draaideur",
-    "Espresso", "Flamingo", "Grasveld", "Hakmes", "IJspegel", "Jongleur", "Kerstboom", "Lippenstift", "Mammoet", "Natuurkunde",
-    "Oester", "Piramide", "Quinoa", "Radiator", "Saxofoon", "Tijdschrift", "Uitzending", "Vleugel", "Wasknijper", "Xenofoob",
-    "Yoghurt", "Zonnewijzer", "Aardewerk", "Bijenkorf", "Champignon", "Draaimolen", "Eekhoorn", "Fotolijst", "Gloeilamp", "Hagelslag",
-    "IJsblokje", "Jaloezie", "Kaleidoscoop", "Lavalamp", "Magnetron", "Nachtmerrie", "Olijfolie", "Pindakaas", "Quiche", "Radijs",
-    "Schommel", "Trompet", "Uiensoep", "Vlindernet", "Weegschaal", "Xenofilie", "Yoghurt", "Zwaardvis", "Abrikoos", "Bieslook",
-    "Croissant", "Domino", "Eierdopje", "Fruitmand", "Grindtegel", "Hangslot", "IJshockey", "Jutezak", "Klimop", "Lijnzaad",
-    "Marsepein", "Nachtlampje", "Oregano", "Pepermolen", "Quinoa", "Rugzak", "Staartster", "Trekharmonica", "Uiercrème", "Vijgenblad",
-    "Wandelstok", "Xyloliet", "Yogamat", "Zandbak", "Aardappel", "Basilicum", "Citroengras", "Dekbedovertrek", "Eierwekker", "Frituurpan",
-    "Gember", "Houtskool", "IJsthee", "Jachtluipaard", "Knoflook", "Limoensap", "Mosterd", "Nootmuskaat", "Ovenwant", "Pepermunt",
-    "Rijsmiddel", "Saffraan", "Tijm", "Uienring", "Vanillestokje", "Wortel", "Zeezout",
-    "Appelmoes", "Boerenkool", "Citroensap", "Druivensuiker", "Eiwit", "Framboos", "Grapefruit", "Hazelnoot", "Tomaat",
-    "Ui", "Veenbes", "Watermeloen", "Xocoatl", "Yoghurt", "Zwarte peper", "Abrikoos", "Braam", "Citroen", "Dadel", "Elderbes",
-    "Framboos", "Granaatappel", "Honingmeloen", "IJzerkruid", "Jeneverbes", "Kers", "Limoen", "Mango", "Noot", "Olijf",
-    "Papaja", "Quinoa", "Rabarber", "Sinaasappel", "Tamarinde", "Ugli", "Vijg", "Walnoot", "Ximenia", "Yucca", "Zoethout",
-    "Acacia", "Bamboe", "Ceder", "Den", "Eik", "Ficus", "Ginkgo", "Hazelaar", "Iep", "Jeneverbes",
-    "Kastanje", "Lariks", "Mahonie", "Noot", "Olijfboom", "Palm", "Quercus", "Rozelaar", "Spar", "Taxus",
-    "Ulmus", "Vlier", "Wilg", "Xanthoceras", "Yucca", "Zilverspar", "Aap", "Bever", "Cavia", "Dolfijn", "Egel",
-    "Fret", "Giraf", "Hamster", "IJsbeer", "Jaguar", "Koala", "Lynx", "Muis", "Nijlpaard", "Otter",
-    "Panda", "Quokka", "Rat", "Schildpad", "Tijger", "Uil", "Vos", "Walvis", "Xerus", "Yak",
-    "Zebra", "Albatros", "Buizerd", "Condor", "Duif", "Ekster", "Flamingo", "Gans", "Havik", "Ibis",
-    "Jan-van-gent", "Kolibrie", "Lepelaar", "Merel", "Nachtegaal", "Ooievaar", "Pauw", "Quetzal", "Raaf", "Specht",
-    "Tureluur", "Uil", "Valk", "Wielewaal", "Xenops", "IJsvogel", "Zwaluw", "Anemoon", "Boterbloem", "Chrysant", "Dahlia", "Ereprijs",
-    "Fresia", "Geranium", "Hortensia", "Iris", "Jasmijn", "Klaproos", "Lelie", "Madeliefje", "Narcis", "Orchidee",
-    "Petunia", "Roos", "Sneeuwklokje", "Tulp", "Viooltje", "Wisteria", "Xerofyt", "Yucca", "Zonnebloem", "Aardappel"];
+    "Oog", "Papegaai", "Quiz", "Ring", "Schaap", "Tomaat", "Ufo", "Vork", "Wolk", "Zon",
+    "Aardbei", "Bos", "Citroen", "Duif", "Eend", "Fietsbel", "Gans", "Harp", "Ijsbeer",
+    "Jam", "Koek", "Lucht", "Mier", "Olijf", "Pinguïn", "Reiger", "Slang", "Tulp", "Umbrella",
+    "Vlinder", "Walvis", "Zaklamp", "Achtbaan", "Banaan", "Chocolade", "Dolfijn", "Eekhoorn", "Fakkel",
+    "Gorilla", "Hamburger", "IJsklontje", "Joker", "Klaver", "Limoen", "Mango", "Nachos", "Octopus",
+    "Pompoen", "Quinoa", "Raket", "Sok", "Tijger", "Uilskuiken", "Vampier", "Walnoot", "Yoga",
+    "Zandloper", "Accordeon", "Baksteen", "Cello", "Emmer", "Föhn", "Golfbal", "Insect", "Jaloezie",
+    "Klompen", "Lantaarn", "Microfoon", "Neushoorn", "Oven", "Puzzel", "Röntgen", "Satelliet", "Telefoon",
+    "Uitkijktoren", "Viool", "Waterski", "Zweefvliegtuig", "Achtertuin", "Biljart", "Concert", "Druif", "Elastiek",
+    "Frisbee", "Graffiti", "Hindernis", "IJsje", "Jubileum", "Kwartet", "Laser", "Mozaïek", "Nijptang",
+    "Omelet", "Parachute", "Quickstep", "Rozenstruik", "Scheikunde", "Trampoline", "Uitsmijter", "Vermiljoen", "Windmolen",
+    "Zeilboot", "Aardappel", "Bureaulamp", "Citruspers", "Draaideur", "Espresso", "Grasveld", "IJspegel", "Jongleur",
+    "Kerstboom", "Lippenstift", "Mammoet", "Natuurkunde", "Oester", "Piramide", "Radiator", "Saxofoon", "Tijdschrift",
+    "Vleugel", "Wasknijper", "Yoghurt", "Zonnewijzer", "Aardewerk", "Bijenkorf", "Champignon", "Draaimolen", "Fotolijst",
+    "Gloeilamp", "Hagelslag", "IJsblokje", "Kaleidoscoop", "Lavalamp", "Magnetron", "Nachtmerrie", "Olijfolie", "Pindakaas",
+    "Radijs", "Schommel", "Trompet", "Uiensoep", "Vlindernet", "Weegschaal", "Zwaardvis", "Abrikoos", "Bieslook",
+    "Croissant", "Domino", "Eierdopje", "Fruitmand", "Grindtegel", "Hangslot", "IJshockey", "Jutezak", "Klimop",
+    "Lijnzaad", "Marsepein", "Nachtlampje", "Oregano", "Pepermolen", "Quinoa", "Rugzak", "Staartster", "Trekharmonica",
+    "Uiercrème", "Vijgenblad", "Wandelstok", "Zandbak", "Basilicum", "Citroengras", "Dekbedovertrek", "Eierwekker",
+    "Frituurpan", "Gember", "Houtskool", "IJsthee", "Jachtluipaard", "Knoflook", "Limoensap", "Mosterd", "Nootmuskaat",
+    "Ovenwant", "Pepermunt", "Rijsmiddel", "Wortel", "Appelmoes", "Boerenkool", "Citroensap", "Eiwit", "Framboos",
+    "Grapefruit", "Hazelnoot", "Tomaat", "Ui", "Veenbes", "Watermeloen", "Peper", "Sinaasappel", "Tamarinde",
+    "Walnoot", "Aap", "Bever", "Cavia", "Dolfijn", "Egel", "Fret", "Hamster", "IJsbeer", "Jaguar",
+    "Koala", "Lynx", "Muis", "Nijlpaard", "Otter", "Panda", "Rat", "Schildpad", "Tijger", "Uil",
+    "Vos", "Walvis", "Zebra", "Duif", "Ekster", "Flamingo", "Gans", "Ooievaar", "Pauw"];
+
 let gebruikteWoorden = [];
 let huidigeRonde = 1;
 const totaalRondes = 13;
@@ -128,10 +118,47 @@ function nieuweRonde() {
         document.getElementById('gekozenWoord').style.display = 'none';
         document.getElementById('eindeSpel').style.display = 'block';
         document.getElementById('eindscore').textContent = score;
+        toonEindbericht(score)
     }
 }
 
 function herlaadPagina() {
     location.reload();
 }
+function toonEindbericht(score) {
+    let bericht = "";
+    if (score === 13) {
+        bericht = "Fantastisch! Perfect gespeeld! Durf je het aan om dit resultaat te evenaren in een nieuwe ronde?";
+    } else if (score >= 10) {
+        bericht = "Geweldig gedaan! Je bent een echte Just One-meester!";
+    } else if (score >= 5) {
+        bericht = "Goed gedaan! Je bent goed op weg om een expert te worden!";
+    } else if (score > 0) {
+        bericht = "Leuk gespeeld! Met een beetje meer oefening haal je de top!";
+    } else if (score === 0) {
+        bericht = "Dat was een uitdagende ronde! Probeer het nog eens om je score te verbeteren!";
+    } else {
+        bericht = "Oeps, dat was lastig! Maar geef niet op, de volgende ronde gaat beter!";
+    }
 
+
+    let eindberichtElement = document.getElementById('eindbericht');
+    typeTekstAnimatie(eindberichtElement, bericht, 3000); // 3000 milliseconden = 3 seconden
+}
+
+function typeTekstAnimatie(element, tekst, duur) {
+    let huidigeIndex = 0;
+    const totaleLengte = tekst.length;
+    const tijdPerLetter = duur / totaleLengte;
+    element.textContent = '';
+
+    const typen = () => {
+        if (huidigeIndex < totaleLengte) {
+            element.textContent += tekst.charAt(huidigeIndex);
+            huidigeIndex++;
+            setTimeout(typen, tijdPerLetter);
+        }
+    };
+
+    typen();
+}
