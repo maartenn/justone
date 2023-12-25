@@ -3,99 +3,44 @@
 <head>
     <title>Just One - Kies een Woord</title>
     <style>
-        #woordKeuze {
-            text-align: center;
-        }
-
-        .woordKnop {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 20px;
-            font-size: 18px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-align: center;
-            width: 80%;
-        }
-
-        .woordKnop:hover {
-            background-color: #0056b3;
-        }
-
-        .woordNummer {
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
         body {
-             font-family: Arial, sans-serif;
-             background-color: #f4f4f4;
-             text-align: center;
-             padding: 20px;
-         }
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 2vh; /* Padding gebaseerd op viewport hoogte */
+            font-size: 3.5vw; /* Basis lettergrootte gebaseerd op viewport breedte */
+        }
 
         h1 {
             color: #333;
+            font-size: 6vw; /* Grotere koptekst gebaseerd op viewport breedte */
         }
 
         #woordKeuze, #gekozenWoord, #eindeSpel {
-            margin-top: 20px;
+            margin-top: 2vh;
         }
 
-        .woordKnop {
-            margin: 10px;
-            padding: 15px 20px;
-            font-size: 18px;
+        .woordKnop, .scoreKnop, button {
+            display: block;
+            margin: 2vh auto;
+            padding: 3vh 2vw; /* Padding gebaseerd op viewport breedte en hoogte */
+            font-size: 6vw; /* Tekstgrootte van knoppen gebaseerd op viewport breedte */
             background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 1vw;
             cursor: pointer;
             transition: background-color 0.3s;
+            width: 80vw; /* Breedte van knoppen gebaseerd op viewport breedte */
         }
 
-        .woordKnop:hover {
+        .woordKnop:hover, .scoreKnop:hover, button:hover {
             background-color: #0056b3;
         }
 
-        #huidigeRonde {
-            font-weight: bold;
-        }
 
-        button {
-            padding: 10px 15px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #28a745;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
 
-        button:hover {
-            background-color: #218838;
-        }
-        .scoreKnop {
-            display: block;
-            margin: 10px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
 
-        .scoreKnop:hover {
-            background-color: #c82333;
-        }
     </style>
 </head>
 <body>
