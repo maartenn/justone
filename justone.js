@@ -194,7 +194,16 @@ function checkSpelStatus() {
         score = 0;
     }
 }
+function updateScore(punten) {
+    huidigeScoreKeuze = punten;
+    scoreKnopGekozen = true;
 
+    // Update knopstijlen
+    const scoreKnoppen = document.querySelectorAll('.scoreKnop');
+    scoreKnoppen.forEach(knop => {
+        knop.style.backgroundColor = knop.getAttribute('data-punten') == punten ? '#28a745' : '#dc3545';
+    });
+}
 // Roep checkSpelStatus aan wanneer de pagina laadt
 document.addEventListener('DOMContentLoaded', checkSpelStatus);
 
