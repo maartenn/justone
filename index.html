@@ -80,6 +80,22 @@
         button:hover {
             background-color: #218838;
         }
+        .scoreKnop {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .scoreKnop:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -92,9 +108,9 @@
 <div id="gekozenWoord" style="display:none;">
     <h2>Gekozen Woord:</h2>
     <p id="huidigWoord"></p>
-    <button onclick="updateScore(1)">Het woord is geraden (+1 punt)</button>
-    <button onclick="updateScore(0)">Geen poging (+0 punt)</button>
-    <button onclick="updateScore(-2)">Fout (-2 punten)</button>
+    <button class="scoreKnop" onclick="updateScore(1)">Het woord is geraden (+1 punt)</button>
+    <button class="scoreKnop" onclick="updateScore(0)">Geen poging (+0 punt)</button>
+    <button class="scoreKnop" onclick="updateScore(-2)">Fout (-2 punten)</button>
     <button onclick="nieuweRonde()">Nieuwe Ronde</button>
 </div>
 
