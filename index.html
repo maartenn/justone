@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Just One - Kies een Woord</title>
+    <style>
+        #woordKeuze {
+            text-align: center;
+        }
+
+        .woordKnop {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            width: 80%;
+        }
+
+        .woordKnop:hover {
+            background-color: #0056b3;
+        }
+
+        .woordNummer {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        body {
+             font-family: Arial, sans-serif;
+             background-color: #f4f4f4;
+             text-align: center;
+             padding: 20px;
+         }
+
+        h1 {
+            color: #333;
+        }
+
+        #woordKeuze, #gekozenWoord, #eindeSpel {
+            margin-top: 20px;
+        }
+
+        .woordKnop {
+            margin: 10px;
+            padding: 15px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .woordKnop:hover {
+            background-color: #0056b3;
+        }
+
+        #huidigeRonde {
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+<h1>Just One - Kies een Woord</h1>
+<p>Ronde: <span id="huidigeRonde">1</span> van 13</p>
+<p>Score: <span id="score">0</span></p>
+<div id="woordKeuze">
+
+</div>
+<div id="gekozenWoord" style="display:none;">
+    <h2>Gekozen Woord:</h2>
+    <p id="huidigWoord"></p>
+    <button onclick="updateScore(1)">Het woord is geraden (+1 punt)</button>
+    <button onclick="updateScore(0)">Geen poging (+0 punt)</button>
+    <button onclick="updateScore(-2)">Fout (-2 punten)</button>
+    <button onclick="nieuweRonde()">Nieuwe Ronde</button>
+</div>
+
+<div id="eindeSpel" style="display:none;">
+    <h2>Het spel is afgelopen!</h2>
+    <button onclick="herlaadPagina()">Opnieuw Spelen</button>
+</div>
+
+<script src="justone.js"></script>
+</body>
+</html>
