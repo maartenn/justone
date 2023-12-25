@@ -14,7 +14,7 @@ let alleWoorden = [
     "Quetzal", "Röntgen", "Satelliet", "Telefoon", "Uitkijktoren", "Viool", "Waterski", "X-chromosoom", "Yoghurtijs", "Zweefvliegtuig",
     "Achtertuin", "Biljart", "Concert", "Druif", "Elastiek", "Frisbee", "Graffiti", "Hindernis", "IJsje", "Jubileum",
     "Kwartet", "Laser", "Mozaïek", "Nijptang", "Omelet", "Parachute", "Quickstep", "Rozenstruik", "Scheikunde", "Trampoline",
-    "Uitsmijter", "Vermiljoen", "Windmolen", "Xenoglossie", "Yoghurtmaker", "Zeilboot", "Aardappel", "Bureaulamp", "Citruspers", "Draaideur",
+    "Uitsmijter", "Vermiljoen", "Windmolen",  "Yoghurtmaker", "Zeilboot", "Aardappel", "Bureaulamp", "Citruspers", "Draaideur",
     "Espresso", "Flamingo", "Grasveld", "Hakmes", "IJspegel", "Jongleur", "Kerstboom", "Lippenstift", "Mammoet", "Natuurkunde",
     "Oester", "Piramide", "Quinoa", "Radiator", "Saxofoon", "Tijdschrift", "Uitzending", "Vleugel", "Wasknijper", "Xenofoob",
     "Yoghurt", "Zonnewijzer", "Aardewerk", "Bijenkorf", "Champignon", "Draaimolen", "Eekhoorn", "Fotolijst", "Gloeilamp", "Hagelslag",
@@ -24,9 +24,8 @@ let alleWoorden = [
     "Marsepein", "Nachtlampje", "Oregano", "Pepermolen", "Quinoa", "Rugzak", "Staartster", "Trekharmonica", "Uiercrème", "Vijgenblad",
     "Wandelstok", "Xyloliet", "Yogamat", "Zandbak", "Aardappel", "Basilicum", "Citroengras", "Dekbedovertrek", "Eierwekker", "Frituurpan",
     "Gember", "Houtskool", "IJsthee", "Jachtluipaard", "Knoflook", "Limoensap", "Mosterd", "Nootmuskaat", "Ovenwant", "Pepermunt",
-    "Quichevorm", "Rijsmiddel", "Saffraan", "Tijm", "Uienring", "Vanillestokje", "Wortel", "Xeresazijn", "Yoghurtdrank", "Zeezout",
-    "Appelmoes", "Boerenkool", "Citroensap", "Druivensuiker", "Eiwit", "Framboos", "Grapefruit", "Hazelnoot", "IJzerkruid", "Jasmijnthee",
-    "Kardemom", "Lavendel", "Melisse", "Nectarine", "Oregano", "Paprikapoeder", "Quinoa", "Rozemarijn", "Salie", "Tomaat",
+    "Rijsmiddel", "Saffraan", "Tijm", "Uienring", "Vanillestokje", "Wortel", "Zeezout",
+    "Appelmoes", "Boerenkool", "Citroensap", "Druivensuiker", "Eiwit", "Framboos", "Grapefruit", "Hazelnoot", "Tomaat",
     "Ui", "Veenbes", "Watermeloen", "Xocoatl", "Yoghurt", "Zwarte peper", "Abrikoos", "Braam", "Citroen", "Dadel", "Elderbes",
     "Framboos", "Granaatappel", "Honingmeloen", "IJzerkruid", "Jeneverbes", "Kers", "Limoen", "Mango", "Noot", "Olijf",
     "Papaja", "Quinoa", "Rabarber", "Sinaasappel", "Tamarinde", "Ugli", "Vijg", "Walnoot", "Ximenia", "Yucca", "Zoethout",
@@ -40,23 +39,12 @@ let alleWoorden = [
     "Tureluur", "Uil", "Valk", "Wielewaal", "Xenops", "IJsvogel", "Zwaluw", "Anemoon", "Boterbloem", "Chrysant", "Dahlia", "Ereprijs",
     "Fresia", "Geranium", "Hortensia", "Iris", "Jasmijn", "Klaproos", "Lelie", "Madeliefje", "Narcis", "Orchidee",
     "Petunia", "Roos", "Sneeuwklokje", "Tulp", "Viooltje", "Wisteria", "Xerofyt", "Yucca", "Zonnebloem", "Aardappel"];
-let score = 0;
+let gebruikteWoorden = [];
 let huidigeRonde = 1;
 const totaalRondes = 13;
-let gebruikteWoorden = [];
-
-// Overige functies blijven hetzelfde
-
-function updateScore(punten) {
-    score += punten;
-    document.getElementById('score').textContent = score;
-    if (huidigeRonde === totaalRondes) {
-        document.getElementById('eindscore').textContent = score;
-    }
-}
-
-
-
+let score = 0;
+let huidigeScoreKeuze = null;
+let scoreKnopGekozen = false;
 
 document.addEventListener('DOMContentLoaded', function() {
     genereerWoordenVoorRonde();
@@ -78,15 +66,19 @@ function genereerWoordenVoorRonde() {
     }
 
     toonWoorden(rondeWoorden);
+
 }
 
 function toonWoorden(woorden) {
     let woordKeuzeDiv = document.getElementById('woordKeuze');
-    woordKeuzeDiv.innerHTML = ''; // Maak het div-element leeg voor nieuwe woorden
+    woordKeuzeDiv.innerHTML = '';
+    document.getElementById('gekozenWoord').style.display = 'none';
+    document.getElementById('woordKeuze').style.display = 'block';
+
     woorden.forEach(function(woord, index) {
         let btn = document.createElement("button");
         btn.className = "woordKnop";
-        btn.innerHTML = `<span class="woordNummer">${index + 1}.</span> ${woord}`;
+        btn.innerHTML = `${index + 1}. ${woord}`;
         btn.onclick = function() { kiesWoord(woord); };
         woordKeuzeDiv.appendChild(btn);
     });
@@ -96,26 +88,50 @@ function kiesWoord(woord) {
     document.getElementById('huidigWoord').textContent = woord;
     document.getElementById('woordKeuze').style.display = 'none';
     document.getElementById('gekozenWoord').style.display = 'block';
-    // Wacht op gebruikersactie om volgende ronde te starten of implementeer een timer
+}
+
+function updateScore(punten) {
+    huidigeScoreKeuze = punten;
+    scoreKnopGekozen = true;
+
+    // Update knopstijlen
+    const scoreKnoppen = document.querySelectorAll('.scoreKnop');
+    scoreKnoppen.forEach(knop => {
+        knop.style.backgroundColor = knop.getAttribute('data-punten') == punten ? '#28a745' : '#dc3545';
+    });
+}
+
+function bevestigScoreEnGaVerder() {
+    if (scoreKnopGekozen) {
+        score += huidigeScoreKeuze;
+        document.getElementById('score').textContent = score;
+        nieuweRonde();
+    } else {
+        alert("Kies eerst een scoreoptie.");
+    }
 }
 
 function nieuweRonde() {
     if (huidigeRonde < totaalRondes) {
-        document.getElementById('woordKeuze').style.display = 'block';
-        document.getElementById('gekozenWoord').style.display = 'none';
-        document.getElementById('huidigeRonde').textContent = ++huidigeRonde;
+        huidigeRonde++;
+        document.getElementById('huidigeRonde').textContent = huidigeRonde;
+
+        // Reset knopstijlen en keuzestatus
+        scoreKnopGekozen = false;
+        const scoreKnoppen = document.querySelectorAll('.scoreKnop');
+        scoreKnoppen.forEach(knop => knop.style.backgroundColor = '#dc3545');
+
+        // Voeg logica toe om een nieuwe ronde te starten
         genereerWoordenVoorRonde();
     } else {
         document.getElementById('woordKeuze').style.display = 'none';
         document.getElementById('gekozenWoord').style.display = 'none';
         document.getElementById('eindeSpel').style.display = 'block';
         document.getElementById('eindscore').textContent = score;
-
     }
 }
-
-// Functie om pagina te herladen blijft hetzelfde
 
 function herlaadPagina() {
     location.reload();
 }
+

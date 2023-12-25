@@ -108,10 +108,10 @@
 <div id="gekozenWoord" style="display:none;">
     <h2>Gekozen Woord:</h2>
     <p id="huidigWoord"></p>
-    <button class="scoreKnop" onclick="updateScore(1)">Het woord is geraden (+1 punt)</button>
-    <button class="scoreKnop" onclick="updateScore(0)">Geen poging (+0 punt)</button>
-    <button class="scoreKnop" onclick="updateScore(-2)">Fout (-2 punten)</button>
-    <button onclick="nieuweRonde()">Nieuwe Ronde</button>
+    <button class="scoreKnop" data-punten="1" onclick="updateScore(1)">Het woord is geraden (+1 punt)</button>
+    <button class="scoreKnop" data-punten="0" onclick="updateScore(0)">Geen poging (+0 punt)</button>
+    <button class="scoreKnop" data-punten="-2" onclick="updateScore(-2)">Fout (-2 punten)</button>
+    <button onclick="bevestigScoreEnGaVerder()">Volgende Ronde</button>
 </div>
 
 <div id="eindeSpel" style="display:none;">
