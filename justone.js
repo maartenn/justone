@@ -111,6 +111,8 @@ function nieuweRonde() {
         document.getElementById('eindeSpel').style.display = 'block';
         document.getElementById('eindscore').textContent = score;
         toonEindbericht(score)
+        setCookie("huidigeRonde", "", -1);
+        setCookie("score", "", -1);
     }
     setCookie("huidigeRonde", huidigeRonde, 1);
 }
