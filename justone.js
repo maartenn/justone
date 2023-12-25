@@ -86,6 +86,7 @@ function bevestigScoreEnGaVerder() {
     if (scoreKnopGekozen) {
         score += huidigeScoreKeuze;
         document.getElementById('score').textContent = score;
+        setCookie("score", score, 1); // Bewaar voor 1 dag
         nieuweRonde();
     } else {
         alert("Kies eerst een scoreoptie.");
@@ -93,7 +94,6 @@ function bevestigScoreEnGaVerder() {
 }
 
 function nieuweRonde() {
-    setCookie("huidigeRonde", huidigeRonde, 1);
     if (huidigeRonde < totaalRondes) {
         huidigeRonde++;
         document.getElementById('huidigeRonde').textContent = huidigeRonde;
@@ -112,6 +112,7 @@ function nieuweRonde() {
         document.getElementById('eindscore').textContent = score;
         toonEindbericht(score)
     }
+    setCookie("huidigeRonde", huidigeRonde, 1);
 }
 
 function herlaadPagina() {
@@ -197,18 +198,6 @@ function checkSpelStatus() {
 // Roep checkSpelStatus aan wanneer de pagina laadt
 document.addEventListener('DOMContentLoaded', checkSpelStatus);
 
-function updateScore(punten) {
-    huidigeScoreKeuze = punten;
-    scoreKnopGekozen = true;
-
-    // Update knopstijlen
-    const scoreKnoppen = document.querySelectorAll('.scoreKnop');
-    scoreKnoppen.forEach(knop => {
-        knop.style.backgroundColor = knop.getAttribute('data-punten') == punten ? '#28a745' : '#dc3545';
-    });
-
-    setCookie("score", score, 1); // Bewaar voor 1 dag
-}
 
 
 
