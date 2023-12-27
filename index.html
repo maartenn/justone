@@ -55,6 +55,29 @@
         #gekozenWoordKnop:disabled {
             cursor: not-allowed;
         }
+        #startScherm {
+            font-family: 'Arial';
+
+            text-align: center;
+            padding: 20px;
+            /* Voeg eventueel aanvullende stijlen toe */
+        }
+
+        #startScherm h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #startScherm p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        #startScherm button {
+            font-size: 20px;
+            padding: 10px 20px;
+            /* Voeg eventueel aanvullende knopstijlen toe */
+        }
 
 
 
@@ -62,26 +85,36 @@
     </style>
 </head>
 <body>
-<h1>Just One - Kies een Woord</h1>
-<p>Ronde: <span id="huidigeRonde">1</span> van 13</p>
-<p>Score: <span id="score">0</span></p>
-<div id="woordKeuze">
+    <div id="startScherm">
+        <h1>Welkom bij Just One (Digitale Versie)</h1>
+        <p>
+            Dit digitale spel is bedoeld als aanvulling op het fysieke spel en is ideaal voor situaties waarin je het fysieke spel niet bij de hand hebt. We raden je aan het fysieke spel aan te schaffen om de volledige spelervaring te beleven. Dit digitale spel is puur bedoeld als hulpmiddel en niet als vervanging van het originele bordspel.
+            Dit is ook de reden dat hier GEEN spelregels staan.
+        </p>
+        <button onclick="startSpel()">Start Spel</button>
+    </div>
+    <div id="spelContainer" style="display:none;">
+        <h1>Just One - Kies een Woord</h1>
+        <p>Ronde: <span id="huidigeRonde">1</span> van 13</p>
+        <p>Score: <span id="score">0</span></p>
+        <div id="woordKeuze">
 
-</div>
-<div id="gekozenWoord" style="display:none;">
-    <button id="gekozenWoordKnop" disabled><span id="huidigWoord"></span></button>
-    <button class="scoreKnop" data-punten="1" onclick="updateScore(1)">Het woord is geraden (+1 punt)</button>
-    <button class="scoreKnop" data-punten="0" onclick="updateScore(0)">Geen poging (+0 punt)</button>
-    <button class="scoreKnop" data-punten="-2" onclick="updateScore(-2)">Fout (-2 punten)</button>
-    <button onclick="bevestigScoreEnGaVerder()">Volgende Ronde</button>
-</div>
+        </div>
+        <div id="gekozenWoord" style="display:none;">
+            <button id="gekozenWoordKnop" disabled><span id="huidigWoord"></span></button>
+            <button class="scoreKnop" data-punten="1" onclick="updateScore(1)">Het woord is geraden (+1 punt)</button>
+            <button class="scoreKnop" data-punten="0" onclick="updateScore(0)">Geen poging (+0 punt)</button>
+            <button class="scoreKnop" data-punten="-2" onclick="updateScore(-2)">Fout (-2 punten)</button>
+            <button onclick="bevestigScoreEnGaVerder()">Volgende Ronde</button>
+        </div>
 
-<div id="eindeSpel" style="display:none;">
-    <h2>Het spel is afgelopen!</h2>
-    <p>Eindscore: <span id="eindscore">0</span></p>
-    <p id="eindbericht"></p>
-    <button onclick="herlaadPagina()">Opnieuw Spelen</button>
-</div>
+        <div id="eindeSpel" style="display:none;">
+            <h2>Het spel is afgelopen!</h2>
+            <p>Eindscore: <span id="eindscore">0</span></p>
+            <p id="eindbericht"></p>
+            <button onclick="herlaadPagina()">Opnieuw Spelen</button>
+        </div>
+    </div>
 
 <script src="justone.js"></script>
 </body>

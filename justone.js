@@ -36,9 +36,9 @@ let score = 0;
 let huidigeScoreKeuze = null;
 let scoreKnopGekozen = false;
 
-document.addEventListener('DOMContentLoaded', function() {
-    genereerWoordenVoorRonde();
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     genereerWoordenVoorRonde();
+// });
 
 function genereerWoordenVoorRonde() {
     if (gebruikteWoorden.length + 5 > alleWoorden.length) {
@@ -158,6 +158,12 @@ function typeTekstAnimatie(element, tekst, duur) {
     typen();
 }
 
+function startSpel() {
+    document.getElementById('startScherm').style.display = 'none';
+    document.getElementById('spelContainer').style.display = 'block';
+    genereerWoordenVoorRonde(); // Roep deze functie aan om het spel te starten
+}
+
 
 function setCookie(name, value, days) {
     var expires = "";
@@ -189,6 +195,8 @@ function checkSpelStatus() {
         score = parseInt(opgeslagenScore);
         document.getElementById('huidigeRonde').textContent = huidigeRonde;
         document.getElementById('score').textContent = score;
+        startSpel();
+
         // Voeg eventueel meer code toe om de spelstatus te herstellen
     } else {
         // Start een nieuw spel
